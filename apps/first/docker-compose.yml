@@ -1,0 +1,36 @@
+version: '2'
+
+services:
+  drone-server:
+    image: drone/drone:0.8
+    ports:
+      - 8080:8000 ## 8080: 外部透過port:8080看到docker內部預設port:8000
+      - 9000:9000  ## <-|
+                   ##   |port:9000 Drone Server與Agent用來溝通的port
+                   ##   |(如果server/agent在同一台的話可以不用設定)
+    volumes:
+      - ./：/var/lib/drone ##(drone預設用SQLite)掛載一個外部的目錄來做寫DB的動作
+    restart: always ##若server掛掉,會自動做重啟
+    environment:
+      - DRONE_OPEN=true ## 開放drone給任何人註冊(當團隊都已註冊,可以改為false)
+      - DRONE_HOST=你的Drone Host ## require, drone public demain
+      - DRONE_SECRET=你的隨機密碼 ## drone Server&Agent用來溝通交換的key
+      - DRONE_ADMIN=testUser1,testUSer2 ## 如果要admin需要設定,多個使用者用逗號隔開
+
+      ## github config
+      - DRONE_GITHUB=true
+      - DRONE_GITHUB_CLIENT=${CLIENT}
+      - DRONE_GITHUB_SECRET=${SECRET}
+
+  drone-agent:
+    image: drone/drone:0.8
+    command: agent
+    restart: always
+    depends_on:
+      - drone-server
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - DRONE_SERVER=drone-server:9000
+      - DRONE_SECRET=你的隨機密碼 ## 要跟上面的server Drone_SECRET設定一樣
+      - DRONE_MAX_PROCS=3 ## 設定drone Agent可以同時build幾個commit
