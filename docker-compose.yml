@@ -15,8 +15,8 @@ services:
 
       # GitHub Config
       - DRONE_GITHUB_SERVER=https://github.com
-      - DRONE_GITHUB_CLIENT_ID=a70acb80d6aa476aa6c4
-      - DRONE_GITHUB_CLIENT_SECRET=9618a3323ac1bd1f7cb9d85be9be78acd7c86e5b
+      - DRONE_GITHUB_CLIENT_ID=9f260540f118fa187cba
+      - DRONE_GITHUB_CLIENT_SECRET=c0833835caf32627faa2fe8f324eb825987e9d2e
 
       - DRONE_LOGS_PRETTY=true
       - DRONE_LOGS_COLOR=true
@@ -30,7 +30,7 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     environment:
-      - DRONE_RPC_HOST=${DRONE_RPC_HOST}
+      - DRONE_RPC_HOST=http://da5fe05d2f5d.ngrok.io
       ## ^
       ## |如果與server架在不同台設定drone server host name
       ## |如果與server架在同一台直接寫入上面的drone-server

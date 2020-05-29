@@ -21,8 +21,13 @@
             "polyfills": "apps/first/src/polyfills.ts",
             "tsConfig": "apps/first/tsconfig.app.json",
             "aot": true,
-            "assets": ["apps/first/src/favicon.ico", "apps/first/src/assets"],
-            "styles": ["apps/first/src/styles.scss"],
+            "assets": [
+              "apps/first/src/favicon.ico",
+              "apps/first/src/assets"
+            ],
+            "styles": [
+              "apps/first/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -80,7 +85,10 @@
               "apps/first/tsconfig.app.json",
               "apps/first/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/first/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/first/**"
+            ]
           }
         },
         "test": {
@@ -115,15 +123,21 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["apps/first-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/first-e2e/**"]
+            "tsConfig": [
+              "apps/first-e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/first-e2e/**"
+            ]
           }
         }
       }
     }
   },
   "cli": {
-    "defaultCollection": "@nrwl/angular"
+    "defaultCollection": "@nrwl/angular",
+    "analytics": "2e40715c-f625-4cf3-8f5c-dcff0ed93ce5"
   },
   "schematics": {
     "@nrwl/angular:application": {
