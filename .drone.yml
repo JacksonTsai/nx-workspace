@@ -1,6 +1,6 @@
 ---
 kind: pipeline
-name: develop-pipe
+name: nx-drone
 
 platform:
   os: linux
