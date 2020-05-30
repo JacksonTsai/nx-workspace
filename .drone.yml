@@ -13,5 +13,5 @@ steps:
   - npm install
   - npm install @angular/cli
   - npm run ng test
-  - npm run ng e2e
+  - npm run ng e2e --headless
 
