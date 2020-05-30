@@ -9,9 +9,9 @@ services:
       - ./:/data
     restart: always
     environment:
-      - DRONE_SERVER_HOST=http://da5fe05d2f5d.ngrok.io
-      - DRONE_SERVER_PROTO=http
-      - DRONE_RPC_SECRET=9618a3323ac1bd1f7cb9d85be9be78acd7c86e5b1
+      - DRONE_SERVER_HOST=2d3c40350f18.ngrok.io
+      - DRONE_SERVER_PROTO=https
+      - DRONE_RPC_SECRET=abcd1234
 
       # GitHub Config
       - DRONE_GITHUB_SERVER=https://github.com
@@ -30,11 +30,11 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     environment:
-      - DRONE_RPC_HOST=http://da5fe05d2f5d.ngrok.io
+      - DRONE_RPC_HOST=drone-server
       ## ^
       ## |如果與server架在不同台設定drone server host name
       ## |如果與server架在同一台直接寫入上面的drone-server
 
       - DRONE_RPC_PROTO=http ## http or https
-      - DRONE_RPC_SECRET=9618a3323ac1bd1f7cb9d85be9be78acd7c86e5b1 ## 與server設定為一樣的
+      - DRONE_RPC_SECRET=abcd1234 ## 與server設定為一樣的
       - DRONE_RUNNER_CAPACITY=3 ### 設定同時可以跑幾個job

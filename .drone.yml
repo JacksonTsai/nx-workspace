@@ -1,6 +1,6 @@
 ---
 kind: pipeline
-name: nx-drone
+name: nx-drone-7ackson
 
 platform:
   os: linux
