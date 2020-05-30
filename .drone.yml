@@ -2,10 +2,6 @@
 kind: pipeline
 name: nx-drone-7ackson
 
-platform:
-  os: linux
-  arch: amd64
-
 steps:
 - name: bootstrap
   image: node:12.13.0
