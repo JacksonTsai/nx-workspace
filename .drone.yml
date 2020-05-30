@@ -11,6 +11,7 @@ steps:
   image: node:12.13.0
   commands:
   - npm install
+  - npm install @angular/cli
   - npm run ng test
   - npm run ng e2e
 
