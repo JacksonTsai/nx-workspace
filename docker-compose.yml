@@ -4,12 +4,12 @@ services:
   drone-server:
     image: drone/drone:1
     ports:
-      - 8081:80
+      - 8765:80
     volumes:
       - ./:/data
     restart: always
     environment:
-      - DRONE_SERVER_HOST=2d3c40350f18.ngrok.io
+      - DRONE_SERVER_HOST=7888f7be78d8.ngrok.io
       - DRONE_SERVER_PROTO=https
       - DRONE_RPC_SECRET=abcd1234
 
