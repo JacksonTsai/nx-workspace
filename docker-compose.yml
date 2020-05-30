@@ -4,18 +4,18 @@ services:
   drone-server:
     image: drone/drone:1
     ports:
-      - 8081:80
+      - 8888:80
     volumes:
       - ./:/data
     restart: always
     environment:
-      - DRONE_SERVER_HOST=7a9ed6a5157e.ngrok.io
+      - DRONE_SERVER_HOST=eae8181c1897.ngrok.io
       - DRONE_SERVER_PROTO=https
       - DRONE_RPC_SECRET=cea6d52f2b910ae8d19ed9e7adaafbeb
 
       - DRONE_GITHUB_SERVER=https://github.com
-      - DRONE_GITHUB_CLIENT_ID=da0f0474cb5bf33e2362
-      - DRONE_GITHUB_CLIENT_SECRET=df857730e8ad0c2f607fd536a0e5255485b4a46e
+      - DRONE_GITHUB_CLIENT_ID=e4c92ae963e4a674a2a9
+      - DRONE_GITHUB_CLIENT_SECRET=19055b9d803c43e775933dcead09f15dc447f43f
 
       - DRONE_LOGS_PRETTY=true
       - DRONE_LOGS_COLOR=true
