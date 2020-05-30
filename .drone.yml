@@ -11,18 +11,6 @@ steps:
   image: node:12.13.0
   commands:
   - npm install
-
-- name: test
-  image: node:12.13.0
-  commands:
   - ng test
-  depends_on:
-  - bootstrap
-  
- - name: e2e
-  image: node:12.13.0
-  commands:
   - ng e2e
-  depends_on:
-  - bootstrap
-  - test
+
