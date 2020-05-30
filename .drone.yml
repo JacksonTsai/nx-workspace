@@ -1,27 +1,9 @@
----
 kind: pipeline
-name: nx-drone-7ackson
-
-steps:
-- name: bootstrap
-  image: node:12.13.0
-  commands:
-  - npm install
+name: default
 
 steps:
 - name: test
-  image: node:12.13.0
+  image: node
   commands:
-  - ng test
- depends_on:
-  - bootstrap
-
-
-steps:
-- name: e2e
-  image: node:12.13.0
-  commands:
-  - ng e2e
- depends_on:
-  - bootstrap
-  - test
+  - npm install
+  - npm test

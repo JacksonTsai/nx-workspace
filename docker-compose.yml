@@ -11,7 +11,7 @@ services:
     environment:
       - DRONE_SERVER_HOST=7a9ed6a5157e.ngrok.io
       - DRONE_SERVER_PROTO=https
-      - DRONE_RPC_SECRET=ab8624a8c2804acd880eeb6f5681975254186761
+      - DRONE_RPC_SECRET=cea6d52f2b910ae8d19ed9e7adaafbeb
 
       - DRONE_GITHUB_SERVER=https://github.com
       - DRONE_GITHUB_CLIENT_ID=da0f0474cb5bf33e2362
@@ -31,5 +31,5 @@ services:
     environment:
       - DRONE_RPC_HOST=drone-server
       - DRONE_RPC_PROTO=http
-      - DRONE_RPC_SECRET=ab8624a8c2804acd880eeb6f5681975254186761
+      - DRONE_RPC_SECRET=cea6d52f2b910ae8d19ed9e7adaafbeb
       - DRONE_RUNNER_CAPACITY=3
