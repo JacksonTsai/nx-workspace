@@ -1,6 +1,6 @@
 ---
 kind: pipeline
-name: develop-pipe
+name: test
 
 platform:
   os: linux
@@ -12,7 +12,21 @@ steps:
   commands:
   - npm install
   - npm run ng test
-  - npm run e2e
+
+---
+kind: pipeline
+name: build
+
+steps:
+- name: bootstrap
+  image: node:12.13.0
+  commands:
+  - npm install
+
+- name: build
+  image: node:12.13.0
+  commands:
+  - npm build -prod
 
 
 
