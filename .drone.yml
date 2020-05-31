@@ -12,6 +12,7 @@ steps:
   commands:
   - npm install
   - npm run ng test
+  - npm run e2e
 
 
 
