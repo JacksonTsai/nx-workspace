@@ -12,7 +12,9 @@ steps:
   commands:
   - npm install
   - npm run ng test
-
+node:
+  project: node_1
+  
 ---
 kind: pipeline
 name: build
@@ -27,6 +29,10 @@ steps:
   image: node:12.13.0
   commands:
   - npm build -prod
+
+node:
+  project: node_2
+
 
 
 
