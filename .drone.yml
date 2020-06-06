@@ -1,10 +1,4 @@
 
-clone:
-  git:
-    image: plugins/git
-    depath: 3
-    tags: true
-
 ---
 
 kind: pipeline
@@ -13,6 +7,13 @@ name: test
 platform:
   os: linux
   arch: amd64
+
+clone:
+  git:
+    image: plugins/git
+    depath: 3
+    tags: true
+
 
 steps:
 - name: bootstrap
