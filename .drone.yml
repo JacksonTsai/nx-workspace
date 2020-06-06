@@ -2,6 +2,13 @@
 kind: pipeline
 name: test
 
+clone:
+  git:
+    image: plugins/git
+    depath: 3
+    tags: true
+
+
 platform:
   os: linux
   arch: amd64
