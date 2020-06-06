@@ -14,19 +14,19 @@ steps:
   - npm run ng test
 
   
----
-kind: pipeline
-name: build
+# ---
+# kind: pipeline
+# name: build
 
-steps:
-- name: bootstrap
-  image: node:12.13.0
-  commands:
-  - npm install
+# steps:
+# - name: bootstrap
+#   image: node:12.13.0
+#   commands:
+#   - npm install
 
-- name: build
-  image: node:12.13.0
-  commands:
-  - npm build -prod
+# - name: build
+#   image: node:12.13.0
+#   commands:
+#   - npm build -prod
 
 
