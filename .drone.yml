@@ -12,8 +12,7 @@ steps:
   commands:
   - npm install
   - npm run ng test
-node:
-  project: node_1
+
   
 ---
 kind: pipeline
@@ -30,6 +29,4 @@ steps:
   commands:
   - npm build -prod
 
-node:
-  project: node_2
 
