@@ -1,10 +1,11 @@
 
----
 clone:
   git:
     image: plugins/git
     depath: 3
     tags: true
+
+---
 
 kind: pipeline
 name: test
